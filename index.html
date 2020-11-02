@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Ebola Transmissibility in the 2018–19 Kivu Ebola Epidemic</title>
+		<title>Election Security And Policy Concerns</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -31,170 +31,218 @@
 			<div class="slides">
 				<section class="title-slide" data-background-image="img/jhuapl-background.png" data-background-size="contain" data-markdown>
 					<textarea data-template>
-						# Ebola Transmissibility in the 2018–19 Kivu Ebola Epidemic
+						# Election Security And Policy Concerns
 						
 						James P. Howard, II <<james.howard@jhu.edu>><br/>
-						2020 Joint Statistical Meetings&mdash;Coronavirus Edition
+						2020 INFORMS&mdash;Coronavirus Edition
 					</textarea>
 				</section>
 				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
 					<textarea data-template>
-						<figure class="featured right">
-							<img src="img/ebola-virus.jpg" />
-							<figcaption>Transmission electron microscope of the Ebolavirus particle (Cynthia Goldsmith/CDC)</figcaption>
-						</figure>
+						## About Me
 
-						## Ebola Background
-
-						* Viral hemorrhagic fever
-						  * Transmission via bodily fluids
-						  * Mortality rate of approx. 50%
-						  * Limited to primates, including humans
-						  * Five known strains of the virus
-						* First case believed from wild animal
-						  * First identified in 1976 in Sudan
-						  * Periodic outbreaks in Africa since
-						  * 2014 spread to U.S. and Europe
+						* Data scientist at the Johns Hopkins Applied Physics Laboratory
+						* Candidate for state delegate in Maryland in 2018
+						* Candidate for convention delegate in 2020
+						* Other:
+						  * Served as Election Judge in 2004
+						  * Worked on numerous campaigns as volunteer
+						  * Counted ballots in 1998
+						  * Done this my entire life...
 					</textarea>
 				</section>
 				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
 					<textarea data-template>
 						<figure class="featured left">
-							<img src="img/kivu-epidemic-map.jpg" />
-							<figcaption>Congolese provinces affected by the epidemic (NordNordWest, DaB./Wikimedia Commons)</figcaption>
+							<img src="img/ballot-box.jpg" />
 						</figure>
 
-						## 2018–19 Kivu Ebola Epidemic
+						## Elections in America
 
-						* Started August 1, 2018
-						  * Currently active
-						* Spread across eastern DRC
-						  * Ituri (green, top)
-						  * North Kivu (orange, middle)
-						  * South Kivu (dark red, bottom)
-						* As of November 30, 2019:
-						  * 3195 confirmed cases
-						  * 2205 dead
-						  * Another 4 cases in Uganda
+						* Extremely decentralized
+						* 51 different state elections 
+						  * DC is a state for this purpose
+						* Most devolve election authority
+						  * Local government entities run
+						  * Counties/cities do nuts and bolts
+						  * Share results with state authorities
+						* State election authorities tabulate
+						  * Tabulate multijurisdiction results
+						  * Manage reporting and compliance
 					</textarea>
 				</section>
 				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
 					<textarea data-template>
-						<div class="featured right">
+						<figure class="featured right">
+							<img src="img/convention.jpg" />
+							<figcaption>A nominating convention (<a href="https://en.wikipedia.org/wiki/User:Qqqqqq">Qqqqqq</a> at <a href="https://en.wikipedia.org/wiki/">English Wikipedia</a>)</figcaption>
+						</figure>
 
-						#### Model equations
-
-						`$$\begin{aligned}
-						\frac{dS}{dt} & = -\frac{\beta IS}{N} \\
-						\frac{dI}{dt} & = \frac{\beta IS}{N} - \gamma I \\
-						\frac{dR}{dt} & = \gamma I
-						\end{aligned} $$`
-
-						#### After Estimation
-
-						`$$ R_0 = \frac{\beta}{\gamma} $$`
-
-						</div>
-
-						## The SIR Model
+						## Presidential Elections
 
 						<div>
 
-						* Standard epidemiological model
-							* Multicompartment mode
-							* Catenary model of progression
-						* Cell descriptions
-							* S: susceptible, base pool of persons
-							* I: infective, those who can transmit
-							* R: removed, through recovery or death
+						* Many moving parts
+						  * The primaries
+						  * The general
+						* System has grown over time
+						  * Mostly an <emph>ad hoc</emph> collection of processes
+						* Almost none of this system was designed
+						* And the Republicans and Democrats<br/>do primaries differently...
+
+						</div>
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+
+						<div class="featured right" width="45%">
+
+						## Republican Party 
+						
+						* Allocates delegates to states 
+						  * Base amounts for each state
+						  * More for each congressional district
+						  * Some allocations for territories and DC
+						* Superdelgates
+						  * Some reserved positions for state party representatives 
+						  * And some for governors and other state elected officials
 
 						</div>
 
-						<figure>
-							<img src="img/sir-model.svg" />
-						</figure>
+						<div class="featured left" width="45%">
 
+						## Democratic Party
+						
+						* Allocates delegates to states
+						  * Proprortion of votes each state gave to Democratic candidates in three prior elections
+						  * Also allocates some to 5 U.S. territories and Democrats abroad
+						* Superdelgates
+						  * Reserved positions for major Democratic officeholders
+						  * Governors, members of Congress, and "distinguished party leaders"
 
-					</textarea>
-				</section>
-				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
-					<textarea data-template>
-						<figure class="featured right">
-							<img src="img/pyomo-cover.png" />
-						</figure>
-
-						## Model Estimation
-
-						* Software used
-							* Pyomo 5.6.6—optimization
-							* Ipopt 3.13.0—solver
-							* R 3.6.1—data preprocessing
-						* Modified SI model provided by Hart, et al.
-							* Adds R compartment
-							* Pyomo available upon request
-						* Assumptions
-							* 10,000,000 initial susceptible pool
-							* Expected infectious period of 21 days
-							* Not infectious until symptomatic
-					</textarea>
-				</section>
-				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
-					<textarea data-template>
-						<figure class="featured right">
-							<img src="img/ebola-i-cases-byweek.png" />
-						</figure>
-
-						## Data Acquisition and Preparation
-
-						* Data from Humanitarian Data Exchange
-						  * Daily case count from August 3, 2018
-						  * Data through November 28, 2019
-						  * Aggregated from DRC MOH reports
-						* Data Preparation
-						  * Aggregated to weekly case counts
-						  * Established running sums weekly cases
-						    * 3-week run period
-						  * Weekly counts for the I compartment
-						* Plot of I compartment by week at right
-					</textarea>
-				</section>
-				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
-					<textarea data-template>
-						<figure class="featured right">
-							<img src="img/ebola-deaths-byweek.png" />
-						</figure>
-
-						## Discussion and Conclusions
-
-						* Estimated `$$ 𝑅_0=2.017148$$`
-						  * Prior estimates range from 1.5 to 2.5
-						  * Landed right in the middle
-						* Future Directions
-						  * Expanding to SEIR model (exposed)
-						  * Re-estimates based on new data
-						  * Meta-analysis of all estimates
-					</textarea>
-				</section>
-				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
-					<textarea data-template>
-						<figure class="featured right">
-							<img src="img/ebola-file.jpg" />
-							<figcaption>Ebola treatment in the Democratic Republic of the Congo (WHO)</figcaption>
-						</figure>
-
-						<div style="width: 50%; font-size: 1rem;">
-
-						## References
-
-						* Althaus, C. L. (2014). Estimating the reproduction number of Ebola virus (EBOV) during the 2014 outbreak in West Africa. _PLoS Currents_, 6.
-						* Godfrey, K. (1983). _Compartmental models and their application_. New York: Academic Press.
-						* Hart, W. E., Laird, C. D., Watson, J. P., Woodruff, D. L., Hackebeil, G. A., Nicholson, B. L., & Siirola, J. D.
-						(2017). _Pyomo-optimization modeling in Python_ (2nd ed.) (Vol. 67). Berlin: Springer.
-						* Kermack, W. O., & McKendrick, A. G. (1927). A contribution to the mathematical theory of epidemics. _Proceedings of the
-						Royal Society of London. Series A, Containing papers of a mathematical and physical character_, 115(772), 700-721.
-						* Wächter, A., & Biegler, L. T. (2006). On the implementation of an interior-point filter line-search algorithm for
-						large-scale nonlinear programming. _Mathematical Programming_, 106(1), 25-57.
 						</div>
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						<figure class="featured right">
+							<img src="img/voting.jpg" />
+						</figure>
+
+						<div class="featured left" width="45%">
+
+						## More About Primaries
+
+						* These are *private* elections
+						  * They are run by the state, but private
+						* You don't actually vote for the candidate
+						  * You vote for the delegates who vote for the candidate
+						* Each state may differ in approach
+						  * Elections
+						  * Caucuses
+						  * Scheduled whenever
+
+						</div>
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						<figure class="featured right">
+							<img src="img/vote-stickers.jpg" />
+						</figure>
+
+						<div class="featured left" width="45%">
+
+						## Election Day!
+
+						* You vote!
+						* You may vote for a candidate...
+						  * The state tallies up all the votes
+						  * Allocates *all* of the states Electoral votes to the candidate
+						    * Except Nebraska and Maine...because, of course
+						* This is why the "loser" may win
+						* None of this is Federally-run
+						  * It's all done by the states
+
+						</div>
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						<figure class="featured right">
+							<img src="img/congress.jpg" />
+						</figure>
+						
+						<div class="featured left" width="45%">
+						
+						## The Electoral College
+					
+						* State certifies the results
+							* *Only* 50 states and DC
+							*o territories, other
+						* Electors get selected
+						* Electors cast their ballots
+							* Which are usually the same
+							* But sometimes, not
+							  * "Faithless electors"
+						* And all the Electoral College votes are sent to Congress
+
+						</div>
+
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						<figure class="featured right">
+							<img src="img/mail.jpg" />
+						</figure>
+
+						<div class="featured left" width="45%">
+						
+						## Mail-In Balloting
+					
+						* We've had mail-in balloting forever
+						  * We call it absentee voting!
+						* Some states already do exclusive mail-in voting:
+						  * Five states, starting in 2000
+						* Other states, notably California rolling it out
+						* No substantive issues with security found
+						* Higher voter participation found, but may not vote-stick
+						* Voter fraud is basically non-existent
+						</div>
+
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+
+						## What Does This Mean?
+
+						* The entire electoral system is extremely decentralized
+						* No local area oversees more than about 10M population
+						  * Los Angeles County: 4.3M voters
+						* Mean county population is about 100,000
+						  * Mean registered voters somewhere around 50,000
+						* State rules differ from state to state
+						  * Counties have some freedom in implementing rules
+						* Many different standards and transfer mechanisms
+						* Strong diversification of methods and mechanisms
+
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						
+						## Why does this matter?
+
+					</textarea>
+				</section>
+				<section class="" data-background-image="img/jhuapl-background-blank.png" data-background-size="contain" data-markdown>
+					<textarea data-template>
+						
+						## Hacking the election is hard!
+
 					</textarea>
 				</section>
 				<section class="closing-slide" data-background-image="img/jhuapl-background-closing.png" data-background-size="contain" data-markdown></section>
